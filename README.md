@@ -11,6 +11,7 @@ This repository showcases a simple Spring Boot application that demonstrates:
 - Spring Web
 - Spring Security 6
 - PostMan
+- MySQL Database
 
 ## 📬 Sample Request
 
