@@ -7,12 +7,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.web.csrf.CsrfToken;
 import org.springframework.web.bind.annotation.*;
 
-import java.nio.file.FileStore;
 import java.util.List;
 
 @RestController
 @RequestMapping("/products")
 public class ProductController {
+
 
    @Autowired
     private ProductRepository productRepository;
@@ -28,15 +28,16 @@ public class ProductController {
         return productRepository.findAll();
     }
 
-    /*@GetMapping("/csrf")
-    public CsrfToken csrfToken(HttpServletRequest request){
-        return (CsrfToken) request.getAttribute("_csrf");
-    }*/
-
     @GetMapping("/csrf")
-    public CsrfToken csrfToken(HttpServletRequest request){
+    public CsrfToken getCsrfToken(HttpServletRequest request){
         return (CsrfToken) request.getAttribute("_csrf");
     }
+
+
+
+
+
+
 
 
 
