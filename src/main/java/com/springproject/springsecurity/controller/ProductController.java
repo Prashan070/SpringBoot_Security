@@ -14,31 +14,24 @@ import java.util.List;
 public class ProductController {
 
 
-   @Autowired
+    @Autowired
     private ProductRepository productRepository;
 
 
     @PostMapping
-    public Product saveNewProduct(@RequestBody Product product){
+    public Product saveNewProduct(@RequestBody Product product) {
         return productRepository.save(product);
     }
 
     @GetMapping
-    public List<Product> getAllJob (){
+    public List<Product> getAllJob() {
         return productRepository.findAll();
     }
 
     @GetMapping("/csrf")
-    public CsrfToken getCsrfToken(HttpServletRequest request){
+    public CsrfToken getCsrfToken(HttpServletRequest request) {
         return (CsrfToken) request.getAttribute("_csrf");
     }
-
-
-
-
-
-
-
 
 
 }
